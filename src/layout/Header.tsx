@@ -4,19 +4,21 @@ import SearchBar from "../components/SearchBar";
 const Header = () => {
   return (
     <div className="headerMain">
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          alignItems: "center",
-        }}>
+      <div className="headerInner">
         <div
           style={{
             flex: 1,
             display: "flex",
             justifyContent: "center",
           }}>
-          <h1>LOGO</h1>
+          <img
+            src="https://static.tvmaze.com/images/tvm-header-logo.png"
+            alt="logo"
+            style={{
+              width: "100px",
+              objectFit: "contain",
+            }}
+          />
         </div>
         <div
           style={{

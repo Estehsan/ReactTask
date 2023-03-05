@@ -58,13 +58,27 @@
 .column {
   width: calc(25% - 10px);
   background-color: "#fff";
-  background-color: green;
   margin: 5px;
 }
 
 @media screen and (max-width: 768px) {
   .column {
     width: calc(50% - 10px);
-    background-color: green;
   }
+  .headerInner {
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .headerInner {
+    flex: 1;
+    align-items: center;
+    display: flex;
+  }
+}
+
+.headerInner {
+  padding: 10px 0;
+  align-items: center;
 }

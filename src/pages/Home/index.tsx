@@ -10,7 +10,15 @@ const Home: React.FC = () => {
       <div className="CenterAlign">
         {/* <img src={logo} alt="logo" /> */}
         <div>
-          <h1>Logo</h1>
+          <img
+            src="https://static.tvmaze.com/images/tvm-header-logo.png"
+            alt="logo"
+            style={{
+              height: "305px",
+              width: "100%",
+              objectFit: "cover",
+            }}
+          />
           <SearchBar />
         </div>
       </div>
