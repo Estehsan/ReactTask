@@ -4,7 +4,7 @@
   --white: #fff;
   --black: #000;
 }
-Main {
+.Main {
   flex: 1;
 }
 
@@ -39,8 +39,32 @@ Main {
 }
 
 .CenterAlign {
-  padding: 0 20%;
+  padding: 0 25%;
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+
+.headerMain {
+  padding: 0 5%;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.column {
+  width: calc(25% - 10px);
+  background-color: "#fff";
+  background-color: green;
+  margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .column {
+    width: calc(50% - 10px);
+    background-color: green;
+  }
 }

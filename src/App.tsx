@@ -1,10 +1,12 @@
 import React from "react";
 import Home from "./pages/Home";
+import SearchResult from "./pages/SearchResult";
 
 const App = () => {
   return (
     <div>
-      <Home />
+      {/* <Home /> */}
+      <SearchResult />
     </div>
   );
 };

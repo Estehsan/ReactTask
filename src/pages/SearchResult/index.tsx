@@ -1,9 +1,12 @@
 import React from "react";
+import ListView from "../../components/ListView";
+import Header from "../../layout/Header";
 
 const SearchResult = () => {
   return (
     <div>
-      <h1>asdas</h1>
+      <Header />
+      <ListView />
     </div>
   );
 };
