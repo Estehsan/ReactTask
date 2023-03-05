@@ -1,0 +1,46 @@
+:root {
+  --primary: #00a496;
+  --secondary: #6c757d;
+  --white: #fff;
+  --black: #000;
+}
+Main {
+  flex: 1;
+}
+
+.SearchMain {
+  display: flex;
+  padding: 2px;
+  width: 100%;
+  background-color: white;
+  border-radius: 2px;
+}
+
+.SearchInput {
+  flex: 1;
+
+  height: 40px;
+  border: 0px solid #ccc;
+  border-radius: 4px;
+  padding: 0 10px;
+  font-size: 16px;
+  outline: none;
+}
+
+.SearchButton {
+  height: 40px;
+  padding: 0 20px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 2px;
+  background-color: var(--primary);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.CenterAlign {
+  padding: 0 20%;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
