@@ -12,7 +12,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
   onClick,
 }) => {
   return (
-    <form className="SearchMain">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+      className="SearchMain">
       <input
         className="SearchInput"
         type="text"
@@ -20,7 +24,11 @@ const SearchBar: React.FC<SearchBarProps> = ({
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <button onClick={onClick} type="submit" className="SearchButton">
+      <button
+        onClick={onClick}
+        disabled={search === ""}
+        type="submit"
+        className="SearchButton">
         Search
       </button>
     </form>

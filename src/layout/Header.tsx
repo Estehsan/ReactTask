@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 
-const Header = (
-  search: string,
-  setSearch: React.Dispatch<React.SetStateAction<string>>,
-  onClick: () => void
-) => {
+interface HeaderProps {
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  onClick: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ search, setSearch, onClick }) => {
   return (
     <div className="headerMain">
       <div className="headerInner">
@@ -16,6 +18,7 @@ const Header = (
               flex: 1,
               display: "flex",
               justifyContent: "center",
+              alignItems: "center",
             }}>
             <img
               src="https://static.tvmaze.com/images/tvm-header-logo.png"
@@ -23,7 +26,7 @@ const Header = (
               style={{
                 width: "160px",
                 objectFit: "contain",
-                padding: "15px 0",
+                padding: "15px",
               }}
             />
           </div>

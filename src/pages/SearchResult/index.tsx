@@ -1,7 +1,7 @@
 import React from "react";
 import ListView from "../../components/ListView";
 import Header from "../../layout/Header";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 // interface SearchProps {
@@ -11,13 +11,21 @@ import axios from "axios";
 
 const SearchResult: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+
   const [search, setSearch] = React.useState("");
   const [list, setList] = React.useState([]);
 
   const [loading, setLoading] = React.useState(false);
-
   const onClick = () => {
-    console.log("clicked");
+    if (search === "") {
+      return;
+    }
+    navigate("/search", {
+      state: {
+        search: search,
+      },
+    });
   };
 
   const getApi = async () => {
@@ -39,7 +47,7 @@ const SearchResult: React.FC = () => {
 
   return (
     <div>
-      {/* <Header search={search} setSearch={setSearch} onClick={onClick} /> */}
+      <Header search={search} setSearch={setSearch} onClick={onClick} />
 
       <div className="container">
         {loading ? (

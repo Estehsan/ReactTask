@@ -4,6 +4,8 @@ body {
   font-family: "Helvetica";
   font-weight: normal;
   font-style: normal;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 code {
@@ -25,4 +27,21 @@ h2 {
   font-weight: 700;
   line-height: 18px;
   color: #fff;
+}
+
+p {
+  font-family: "Helvetica";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #fff;
+}
+
+span {
+  font-family: "Helvetica";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  color: #fff;
+  opacity: 0.6;
 }

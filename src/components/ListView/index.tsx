@@ -15,7 +15,7 @@ const ListView: React.FC<ListViewProps> = ({ data, key }) => {
       onClick={() => {
         navigate(`/movie/${data.show.id}`, {
           state: {
-            title: data.show.name,
+            id: data.show.id,
           },
         });
       }}
