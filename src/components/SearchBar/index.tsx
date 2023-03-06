@@ -1,15 +1,26 @@
 import React from "react";
 
-const SearchBar = () => {
+interface SearchBarProps {
+  search: string;
+  setSearch: React.Dispatch<React.SetStateAction<string>>;
+  onClick: () => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({
+  search,
+  setSearch,
+  onClick,
+}) => {
   return (
     <form className="SearchMain">
       <input
-        name="search"
         className="SearchInput"
         type="text"
         placeholder="Search"
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
       />
-      <button type="submit" className="SearchButton">
+      <button onClick={onClick} type="submit" className="SearchButton">
         Search
       </button>
     </form>

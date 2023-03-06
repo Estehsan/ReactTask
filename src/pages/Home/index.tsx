@@ -1,26 +1,41 @@
 import React from "react";
 import SearchBar from "../../components/SearchBar";
-// import logo from "../../assets/logo.png";
+import { useLocation, useNavigate } from "react-router-dom";
 
-// import type for image files
+const Home = () => {
+  const navigate = useNavigate();
 
-const Home: React.FC = () => {
+  const [search, setSearch] = React.useState("");
+  console.log(search);
+
+  const onClick = () => {
+    navigate("/search", {
+      state: {
+        search: search,
+      },
+    });
+  };
+
   return (
     <div className="Main">
       <div className="CenterAlign">
-        {/* <img src={logo} alt="logo" /> */}
-        <div>
+        <div
+          style={{
+            flex: 1,
+            display: "flex",
+            justifyContent: "center",
+          }}>
           <img
             src="https://static.tvmaze.com/images/tvm-header-logo.png"
             alt="logo"
             style={{
               height: "305px",
-              width: "100%",
-              objectFit: "cover",
+              width: "253px",
+              objectFit: "contain",
             }}
           />
-          <SearchBar />
         </div>
+        <SearchBar onClick={onClick} search={search} setSearch={setSearch} />
       </div>
     </div>
   );
