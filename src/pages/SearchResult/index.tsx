@@ -3,7 +3,7 @@ import ListView from "../../components/ListView";
 import Header from "../../layout/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import "./SearchResult.css";
 // interface SearchProps {
 //   search: string;
 //   setSearch: React.Dispatch<React.SetStateAction<string>>;
@@ -11,29 +11,24 @@ import axios from "axios";
 
 const SearchResult: React.FC = () => {
   const location = useLocation();
-  const navigate = useNavigate();
 
   const [search, setSearch] = React.useState("");
   const [list, setList] = React.useState([]);
 
   const [loading, setLoading] = React.useState(false);
-  const onClick = () => {
-    if (search === "") {
-      return;
-    }
-    navigate("/search", {
-      state: {
-        search: search,
-      },
-    });
-  };
 
   const getApi = async () => {
+    console.log("location arhi ha ? ", location.state.search);
     try {
       const response = await axios.get(
         `https://api.tvmaze.com/search/shows?q=${location.state.search}`
       );
+
       setList(response.data);
+      setSearch(
+        location.state.search === undefined ? [] : location.state.search
+      );
+
       console.log(list);
     } catch (error) {
       console.log(error);
@@ -47,14 +42,12 @@ const SearchResult: React.FC = () => {
 
   return (
     <div>
-      <Header search={search} setSearch={setSearch} onClick={onClick} />
-
       <div className="container">
         {loading ? (
           <h1>Loading...</h1>
         ) : (
           list.map((data, index) => {
-            return <ListView key={index} data={data} />;
+            return <ListView search={search} key={index} data={data} />;
           })
         )}
       </div>

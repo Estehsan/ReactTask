@@ -1,0 +1,27 @@
+.LogoContainer {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding: 20px 0px;
+}
+.homeCenter {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding-top: 25%;
+}
+.headerInner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.searchBarContainer {
+  padding-left: 10px;
+  flex: 2;
+}
+
+.logoStyle {
+  width: 160px;
+  object-fit: contain;
+}

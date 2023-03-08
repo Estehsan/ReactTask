@@ -4,9 +4,10 @@ import { useNavigate } from "react-router-dom";
 interface ListViewProps {
   data: any;
   key: any;
+  search: string;
 }
 
-const ListView: React.FC<ListViewProps> = ({ data, key }) => {
+const ListView: React.FC<ListViewProps> = ({ data, key, search }) => {
   const navigate = useNavigate();
 
   return (
@@ -34,7 +35,6 @@ const ListView: React.FC<ListViewProps> = ({ data, key }) => {
         }}
       />
       <h2>{data.show.name}</h2>
-      {/* <h2>{data.rating.average}</h2> */}
     </div>
   );
 };

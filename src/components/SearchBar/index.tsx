@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./SearchBar.css";
 interface SearchBarProps {
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;

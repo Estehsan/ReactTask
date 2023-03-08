@@ -1,41 +1,57 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
+import "./Header.css";
+const Header: React.FC = () =>
+  // {
+  //   // search, setSearch, onClick
+  // }
+  {
+    const location = useLocation();
 
-interface HeaderProps {
-  search: string;
-  setSearch: React.Dispatch<React.SetStateAction<string>>;
-  onClick: () => void;
-}
+    return (
+      <>
+        {location.pathname === "/" ? (
+          <>
+            <HeaderAll />
+            <Outlet />
+          </>
+        ) : (
+          <>
+            <HeaderAll />
+          </>
+        )}
+      </>
+    );
+  };
 
-const Header: React.FC<HeaderProps> = ({ search, setSearch, onClick }) => {
+const HeaderAll: React.FC = () => {
+  const navigate = useNavigate();
+  const [search, setSearch] = React.useState<string>("");
+  const location = useLocation();
+
+  const onClick = () => {
+    navigate("/search", {
+      state: {
+        search: search,
+      },
+    });
+  };
+
   return (
     <div className="headerMain">
-      <div className="headerInner">
+      <div className={location.pathname === "/" ? "homeCenter" : "headerInner"}>
         <Link to="/">
-          <div
-            style={{
-              flex: 1,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-            }}>
+          <div className="LogoContainer">
             <img
               src="https://static.tvmaze.com/images/tvm-header-logo.png"
               alt="logo"
-              style={{
-                width: "160px",
-                objectFit: "contain",
-                padding: "15px",
-              }}
+              className="logoStyle"
             />
           </div>
         </Link>
 
-        <div
-          style={{
-            flex: 2,
-          }}>
+        <div className="searchBarContainer">
           <SearchBar onClick={onClick} search={search} setSearch={setSearch} />
         </div>
       </div>

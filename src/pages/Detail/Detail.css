@@ -1,0 +1,42 @@
+@media screen and (max-width: 768px) {
+  .detailmain {
+    flex-direction: row-reverse;
+  }
+}
+
+.detailMain {
+  flex: 1;
+  display: flex;
+}
+
+.rightBox {
+  padding: 0px 9%;
+  flex: 3;
+}
+
+.moviePoster {
+  height: 400px;
+  width: 200px;
+  object-fit: contain;
+}
+
+.crewContainer {
+  display: flex;
+  align-items: center;
+}
+
+.crewImage {
+  height: 100px;
+  width: 100px;
+  padding: 10px;
+  object-fit: cover;
+}
+
+.BackContainer {
+  flex: 1;
+  background-color: black;
+  margin-top: 10px;
+  padding: 10px;
+  display: "flex";
+  margin-bottom: 20px;
+}
