@@ -34,9 +34,12 @@ const SearchResult: React.FC = () => {
       console.log(error);
     }
   };
+
   React.useEffect(() => {
     setLoading(true);
     getApi();
+
+    // get the data of animals
     setLoading(false);
   }, [location.state.search]);
 
